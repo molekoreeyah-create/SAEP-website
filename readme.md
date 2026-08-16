@@ -11,9 +11,9 @@
                 <h3><i>Empowering Education, Transforming Futures</i></h3>
                 <nav>
                     <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="services.html">Services</a>
+                    <a href="pages/about.html">About</a>
+                    <a href="pages/contact.html">Contact</a>
+                    <a href="pages/services.html">Services</a>
                 </nav>
             </header>
         </body>
