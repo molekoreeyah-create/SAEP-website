@@ -38,3 +38,35 @@ tabButtons.forEach(function (tab){
         document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
     });
 });
+//Modal
+let openModal = null;
+let lastFocused = null;
+
+function showModal(modal) {
+    lastFocused = document.activeElement; //remember what had focus
+    modal.classList.add('is-open');
+    openModal = modal;
+    document.body.style.overflow = 'hidden'; //stop page scrolling behind it
+    modal.querySelector('.modal-close').focus();
+}
+function hideModal() {
+    if (!openModal) return;
+    openModal.classList.remove('is-open');
+    openModal = null;
+    document.body.style.overflow ='';
+    if (lastFocused) lastFocused.focus(); //return focus to the button
+}
+
+document.addEventListener('click', function (event) {
+    const opener = event.target.closest('[data-modal-open]');
+    if(opener){
+        showModal(document.getElementById(opener.getAttribute('data-modal-open')));
+    }
+    if (event.target.closest('modal-close') || event.target.classList.contains('modal-backdrop')) {
+        hideModal();
+    }
+});
+
+document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape') hideModal();
+});

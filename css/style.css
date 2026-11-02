@@ -556,3 +556,35 @@ footer{ padding: var(--space-md) var(--space-sm);}
     padding: 1.5rem;
     border-radius: 0 0 8px 8px;
 }
+.modal-backdrop{
+    position: fixed;
+    inset: 0;
+    background: rgba (10, 30, 20, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 500;
+}
+.modal-backdrop.is-open { display: flex;}
+
+.modal {
+    position: relative;
+    background: var(--white);
+    max-width: 560px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 16px;
+    border-top: 6px solid var(--gold);
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: transparent;
+    border: 0;
+    font-size: 1.8;
+    line-height: 1;
+    cursor: pointer;
+}
