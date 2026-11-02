@@ -23,3 +23,18 @@ triggers.forEach(function (trigger) {
     }
 });
 });
+// Tabs
+const tabButtons = document.querySelectorAll('[role="tab"]');
+const tabPanels = document.querySelectorAll('[role="tabPanel"]');
+
+tabButtons.forEach(function (tab){
+    tab.addEventListener('click', function (){
+        //deselect all tabs and hide all panels
+        tabButtons.forEach(function (t) { t.setAttribute('aria-selected', 'false'); });
+        tabPanels.forEach(function (p) {p.hidden = true; });
+
+        //select this tab and show its panel
+        tab.setAttribute('aria-selected','true');
+        document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
+    });
+});

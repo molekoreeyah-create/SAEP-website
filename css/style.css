@@ -533,3 +533,26 @@ footer{ padding: var(--space-md) var(--space-sm);}
     nav.is-open{ display: block; }
     nav ul { flex-direction: column; }
 }
+.tabs [roles=tablist]{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    border-bottom: 3px solid var(--green-deep);
+}
+.tabs [role="tab"]{
+    padding: o.5rem 1.5rem;
+    background: var(--green-pale);
+    border: 0;
+    border-radius: 4px 4px 0 0;
+    font-weight: 700;
+    color: var(--green-deep);
+    cursor: pointer;
+}
+.tabs [role="tab"]:hover{ background: var(--gold-light);}
+.tabs [role="tab"][aria-selected="true"] {background: var(--green-deep); color: var(--white);}
+
+.tabs [role="tabpanel"] {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 0 0 8px 8px;
+}

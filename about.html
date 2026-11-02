@@ -18,19 +18,34 @@
                 </nav>
         <body>
             <header><h2><i>Get to know us</i></h2></header>
-            <br>
-            <p>The South African Education Project (SAEP) is a South african non-profit organisation based in Phillipi in Cape Town. SAEP has been providing education,
-                life-skills and psycological support to children, youth and education providers since 1994.
-                 It's programs are designed to expand educational opportunities
+            <section>
+                <div class="tabs">
+                    <div role="tablist" aria-label="About SAEP">
+                        <button role="tab" id="tab-who" aria-controls="panel-who" aria-selected="true">Who we are</button>
+                        <button role="tab" id="tab-mission" aria-controls="mission" aria-selected="false">Mission</button>
+                        <button role="tab" id="tab-vision" aria-controls="vision" aria-selected="false">Vision</button>
+                    </div>
+                    <div role="tabpanel" id="panel-who" aria-labelledby="tab-who">
+                        <h2>Who we are</h2>
+                        <p>The South African Education Project (SAEP) is a South african non-profit organisation based in Phillipi in Cape Town. SAEP has been providing education,
+                life-skills and psycological support to children, youth and education providers since 1994.It's programs are designed to expand educational opportunities
                 and assist youth in aqcquuiring the skills needed for future education and employment. SAEP currently has more than 31 000 beneficiaries and provides 
-                five learing programs.
-            </p>
-            <header><h2><strong>Misson and Vision statement</strong></h2></header>
-            <p><b>Mission:</b> to promote access to quality education for children, young adolescents and adults from marginalised communities through education, life skills
-             and the psycho-social support.<br>
-             <b>Vision:</b>a generation of motivated youth, equipped with education and life-skills to maximise their potential and contribute meaningfully to society.
-            </p>
-            <header><h2>Learning programmes</h2></header>
+                five learing programs.<p>
+                    </div>
+
+                    <div role="tabpanel" id="panel-mission" aria-labelledby="tab-mission" hidden>
+                        <h2>Our Mission</h2>
+                        <p> To promote access to quality education for children, young adolescents and adults from marginalised communities through education, life skills
+             and the psycho-social support.</p>
+                    </div>
+                    <div role="tabpanel" id="panel-vision" aria-labelledby="tab-vision" hidden>
+                        <h2>Our Vision</h2>
+                        <p>A generation of motivated youth, equipped with education and life-skills to maximise their potential and contribute meaningfully to society.</p>
+                    </div>
+                </div>
+            </section>
+           
+            <h2>Learning programmes</h2>
             <div class="accordion">
                 <div class="accordion-item">
                     <h3>
@@ -71,7 +86,7 @@
                     </div>
                 </div>
             </div>
-            
+
                 <b><i>... and many other programmes to choose from!!</i></b>
             </p>
              <p>&copy; 2024 South African Education Project(SAEP). All rights reserved.</p>
