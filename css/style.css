@@ -588,3 +588,6 @@ footer{ padding: var(--space-md) var(--space-sm);}
     line-height: 1;
     cursor: pointer;
 }
+.card-grid { display: grid; grid-template-columns: reapeat(auto-fill, minimax(260px, 1fr)); gap: 1rem; }
+.card {background: var(--white); padding: 1.5rem; border-radius: 8px; border-left: 5px solid var(--green-light); box-shadow: var(--shadow-sm); }
+.badge { background: var(--gold-light); padding: 2px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 700;}
