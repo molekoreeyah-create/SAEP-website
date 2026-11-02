@@ -518,3 +518,18 @@ footer{ padding: var(--space-md) var(--space-sm);}
     body{ font-size: 12pt; color: #000; background: #fff;}
     main{ padding: 0; max-width: 100%;}
 }
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--white);
+    padding: 0.4rem 1rem;
+    font-weight:700;
+    cursor: pointer;
+}
+@media screen and (max-width: 768px){
+    .nav-toggle {display: inline-block; }
+    nav {display: none; }
+    nav.is-open{ display: block; }
+    nav ul { flex-direction: column; }
+}
