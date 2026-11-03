@@ -436,8 +436,7 @@ Important checks include:
 The website is hosted on Netlify.
 
 The deployed website can be accessed at:
-
-https://saep-website.netlify.app/
+https://app.netlify.com/projects/southafricaneducationproject/configuration/general
 
 To deploy an updated version of the website:
 
