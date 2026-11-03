@@ -35,3 +35,31 @@ if (contactForm) {
         }
     });
 }
+function showEmail() {
+    const RECIPIENT = 'info@saep.org';
+    const name = document.getElementById('c-name').value.trim();
+    const email = document.getElementById('c-email').value.trim();
+    const phone = document.getElementById('c-phone').value.trim();
+    const topic = document.getElementById('c-topic').value.trim();
+    const message = document.getElementById('c-message').value.trim();
+
+    const subject = '[' + topic + '] Message from ' + name;
+    const body = 'Hello SAEP team,\n\n' + message + 'n\n--\nName: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone;
+
+    const result = document.getElementById('contact-result');
+    result.textContent = '';
+    
+    const heading = document.createElement('h3');
+    heading.textContent = 'Your email is ready';
+
+    const preview = document.createElement('pre');
+    preview.textContent = 'To: ' + RECIPIENT + '\nSubject: ' + subject + '\n\n' + body;
+
+    const link = document.createElement('a');
+    link.className = 'btn btn-dark';
+    link.textContent = 'Open in my email app';
+    link.href = 'mailto:' + RECIPIENT + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+    result.append(heading, preview, link);
+
+}
