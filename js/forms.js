@@ -1,4 +1,4 @@
-function setError(input, message) {
+    function setError(input, message) {
     const field = input.closest('field');
     field.classList.toggle('invalid', message !== '');
     field.querySelector('.error').textContent = message;
@@ -94,7 +94,7 @@ if (enquiryForm) {
         } else if (typeInput.value === 'service') {
             const h = document.getElementById('e-grade');
             const n = Number(h.value);
-            extra = (g.value === '' || n < 0 || n > 12 || !Number.isInteger(n)) ? "Enter a grade from 0 to 12. ' : " :
+            extra = (g.value === '' || n < 0 || n > 12 || !Number.isInteger(n)) ? 'Enter a grade from 0 to 12. ' : "" ;
 
         } else {
             const a = document.getElementById('e-amount')

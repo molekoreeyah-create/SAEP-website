@@ -70,3 +70,15 @@ document.addEventListener('click', function (event) {
 document.addEventListener('keydown', function(event){
     if (event.key === 'Escape') hideModal();
 });
+
+// Fade sections in when they scroll into view
+const revealItems = document.querySelector('.reveal');
+const observer = new IntersectionObserver(function (entries){
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15});
+revealItems.forEach(function(item) { observer.observe(item); });
