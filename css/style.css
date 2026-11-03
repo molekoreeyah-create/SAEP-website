@@ -605,3 +605,5 @@ footer{ padding: var(--space-md) var(--space-sm);}
 .field input, .field select, .field.textarea { padding: 0.65; border: 2px solid #b9c9b9; border-radius: 4px; }
 .field.invalid input, .field.invalid select, .field.invalid textarea { border-color: #b3261e; background: #fdecea; }
 .error { display: block; min-height: 1.4em; color: #b3261e; font-weight: 700; font-size: 0.875rem; }
+
+.conditional { display: block; }

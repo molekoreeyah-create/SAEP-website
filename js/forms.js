@@ -61,5 +61,63 @@ function showEmail() {
     link.href = 'mailto:' + RECIPIENT + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 
     result.append(heading, preview, link);
+}
+const enquiryForm = document.getElementById('enquiry-form');
 
+if (enquiryForm) {
+    //show only the section for the chosen type
+    enquiryForm.addEventListener('change', function (event){
+        if (event.target.name === 'type') {
+            document.querySelectorAll('.conditional').forEach(function (sec) {
+                sec.classList.toggle('is-active', sec.id === 'sec-' + event.target.value);
+            });
+        }
+    });
+    enquiryForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const typeInput = enquiryForm.querySelector('input'[name="type"], 'checked');
+        const radioError = enquiryForm.querySelector('fieldset .error'); 
+        radioError.textContent = typeInput ? '' : 'Please choose one option.';
+
+        const nameInput = document.getElementById('e-name');
+        const emailInput = document.getElementById('e-email');
+        let nameMsg; checkName(nameInput.value.trim());
+        setError(nameInput, nameMsg);
+        if (!typeInput || nameMsg || emailMsg) return;
+
+        let extra = '';
+        if (typeInput.value === 'volunteer'){
+            const g = document.getElementById('e-grade');
+            const n = Number(g.value);
+            extra = (g.value === '' || n < 2 || n > 12 || !Number.isInteger(n)) ? 'Enter whole hours from 2 to 20.' :
+            setError(g, extra);
+        } else if (typeInput.value === 'service') {
+            const h = document.getElementById('e-grade');
+            const n = Number(h.value);
+            extra = (g.value === '' || n < 0 || n > 12 || !Number.isInteger(n)) ? "Enter a grade from 0 to 12. ' : " :
+
+        } else {
+            const a = document.getElementById('e-amount')
+            const n = Number(h.value);
+            extra = (a.value === '' || n < 50 ) ? 'Enter an amount of R50 or more.': '';
+            setError(a, extra);
+        }
+        if (extra) return;
+         showEnquiryResponse(typeInput.value, nameInput.value.trim());
+    });
+}
+
+function showEnquiryResponse(type, name) {
+    let text;
+    if (type === 'service') {
+        text = 'Our programmessare free for leaners from parter communities. Place depend on your area and grade, and a coordinator will confirm availability.';
+    } else if (type === 'volunteer') {
+        const hours = Number(document.getElementById('e-hours').value);
+        text = 'You can give about' + hours * 10 + 'hours in a ten-week term. We will confirm the next orientation date.';
+    } else {
+        const monthly = Number(document.getElementById('e-amount').value);
+        text = 'Your pledge is R' + monthly + 'per month (R' + montly * 12 + 'per year. We will send the banking details.';
+    }
+    const result = document.getElementById('enquiry-result');
+    result.textContent = 'Thank you, ' + name + '. ' + text ;
 }
