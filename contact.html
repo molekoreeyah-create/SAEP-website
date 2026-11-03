@@ -30,21 +30,40 @@
                             <strong>Organisation</strong>
                             <span>South African Education Programme (SAEP)</span>
                         </li>
-                        <li>
-                            <strong>Emai</strong>
-                            <span>info.saep.org</span>
-                        </li>
-                        <li>
-                            <strong>Telephone</strong>
-                            <span>+27 87 022 0487</span>
-                        </li>
-                        <li>
-                            <strong>Address</strong>
-                            <span>First Floor, Unit BB
-                                N1 City News, N1 City
-                                Cape Town, South Africa</span>
-                        </li>
-                    </ul>
+                        <form id="contact-form" novalidate>
+                            <div class="field">
+                                <label for="c-name">Full name</label>
+                                <input type="text" id="c-name" name="name" required minlength="2" maxlength="60">
+                                <span class="error" role="alert"></span>
+                            </div>
+                            <div class="field">
+                                <label for="c-email">Email Address</label>
+                                <input type="email" id="c-email" name="email" required>
+                                <span class="error" role="alert"></span>
+                            </div>
+                            <div class="field">
+                                <label for="c-phone">Phone number</label>
+                                <input type="tel" id="c-phone" name="phone" required placeholder="082 123 4567">
+                                <span class="error" role="alert"></span>
+                            </div>
+                             <div class="field">
+                                <label for="c-topic">Type of message</label>
+                                <select id="c-topic" name="topic" required>
+                                <option value="">Choose one</option>
+                                <option>General question</option><option>Feedback</option>
+                                <option>Partnership</option><option>Other</option>
+                                </select>
+                                <span class="error" role="alert"></span>
+                            </div>
+                            <div class="field">
+                                <label for="c-message">Message</label>
+                                <textarea id="c-message" name="message" required minlength="20" maxlength="1000"></textarea>
+                                <span class="error" role="alert"></span>
+                            </div>
+                            <button class="btn btn-dark" type="submit">Prepare email</button>
+                        </form>
+                        <div id="contact-result"></div>
+                        <script src="js/forms.js" defer></script>
                 </div>
                 <!--Extra Information Panel-->
                 <div>
